@@ -1,4 +1,5 @@
-﻿using Algorithms.Sorting;
+﻿using Algorithms.Searching;
+using Algorithms.Sorting;
 using System;
 
 namespace Algorithms
@@ -13,7 +14,14 @@ namespace Algorithms
 			// ExecuteMergeSort();
 			// ExecuteQuickSort();
 			// ExecuteCountingSort();
-			ExecuteBucketSort();
+			// ExecuteBucketSort();
+
+			// Searching
+			// ExecuteLinearSearch();
+			// ExecuteBinarySearch();
+			// ExecuteTernarySearch();
+			// ExecuteJumpSearch();
+			ExecuteExponentialSearch();
 			Console.ReadLine();
 		}
 
@@ -106,6 +114,85 @@ namespace Algorithms
 			var sorter = new BucketSort();
 			sorter.Sort(array, 4);
 			Console.WriteLine($"Sorted array - {string.Join(",", array)}");
+		}
+
+		#endregion
+
+		#endregion
+
+		#region Searching
+
+		#region Linear Search
+
+		private static void ExecuteLinearSearch()
+		{
+			var array = new int[] { 7, 2, 7, 9, 1, 3, 3 };
+			var item = 7;
+			Console.WriteLine($"Array - {string.Join(",", array)}");
+			Console.WriteLine($"Linear Search - {item}");
+			var algo = new LinearSearch();
+			var index = algo.Search(array, item);
+			Console.WriteLine($"Item {item} present at index- {index}");
+		}
+
+		#endregion
+
+		#region Binary Search
+
+		private static void ExecuteBinarySearch()
+		{
+			var array = new int[] { 1, 3, 4, 8, 14, 21 };
+			var item = 56;
+			Console.WriteLine($"Array - {string.Join(",", array)}");
+			Console.WriteLine($"Binary Search - {item}");
+			var algo = new BinarySearch();
+			var index = algo.Search(array, item);
+			Console.WriteLine($"Item {item} present at index- {index}");
+		}
+
+		#endregion
+
+		#region Ternary Search
+
+		private static void ExecuteTernarySearch()
+		{
+			var array = new int[] { 1, 3, 4, 8, 14, 21 };
+			var item = 4;
+			Console.WriteLine($"Array - {string.Join(",", array)}");
+			Console.WriteLine($"Ternary Search - {item}");
+			var algo = new TernarySearch();
+			var index = algo.Search(array, item);
+			Console.WriteLine($"Item {item} present at index- {index}");
+		}
+
+		#endregion
+
+		#region Jump Search
+
+		private static void ExecuteJumpSearch()
+		{
+			var array = new int[] { 1, 3, 4, 8, 14, 21 };
+			var item = 40;
+			Console.WriteLine($"Array - {string.Join(",", array)}");
+			Console.WriteLine($"Jump Search - {item}");
+			var algo = new JumpSearch();
+			var index = algo.Search(array, item);
+			Console.WriteLine($"Item {item} present at index- {index}");
+		}
+
+		#endregion
+
+		#region Exponential Search
+
+		private static void ExecuteExponentialSearch()
+		{
+			var array = new int[] { 1, 3, 4, 8, 14, 21 };
+			var item = 87;
+			Console.WriteLine($"Array - {string.Join(",", array)}");
+			Console.WriteLine($"Exponential Search - {item}");
+			var algo = new ExponentialSearch();
+			var index = algo.Search(array, item);
+			Console.WriteLine($"Item {item} present at index- {index}");
 		}
 
 		#endregion
